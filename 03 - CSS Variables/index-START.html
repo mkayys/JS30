@@ -62,6 +62,17 @@
   <script>
 
     const inputs = document.querySelectorAll('.controls input');
+    // returns a NodeList
+
+    function handleUpdate() {
+      // console.log(this.value);
+      const suffix = this.dataset.sizing;
+
+    }
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    //need the mousemove because we want a change even with mouse sliding
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
 
   </script>
 
