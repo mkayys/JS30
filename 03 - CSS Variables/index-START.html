@@ -19,6 +19,7 @@
   </div>
 
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  
 
   <style>
     :root {
@@ -65,8 +66,16 @@
     // returns a NodeList
 
     function handleUpdate() {
-      // console.log(this.value);
-      const suffix = this.dataset.sizing;
+      // console.log(this.dataset);
+      //this.dataset returns an object will all the data- attributes
+      const suffix = this.dataset.sizing || ""; // want or because the color has no sizing
+      // we don't want to append undefined
+
+      // console.log(suffix);
+
+      // console.log(this.name)
+
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
 
     }
 
